@@ -62,6 +62,3 @@ while count < 20:
 
 if(len(sent)):
         email_alert("Vaccine Available", sent, "ameetesh01@gmail.com")
-
-else:
-    email_alert("Vaccine unavailable", "not found", "ameetesh01@gmail.com")
