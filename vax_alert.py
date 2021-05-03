@@ -4,6 +4,7 @@ import datetime
 import smtplib
 from email.message import EmailMessage
 
+#function to send email_alert
 def email_alert(subject, body, to):
     msg = EmailMessage()
     msg.set_content(body)
@@ -20,16 +21,18 @@ def email_alert(subject, body, to):
     server.send_message(msg)
     server.quit()
 
+#converts the json file to more readable form
 def jprint(obj):
     text = json.dumps(obj,sort_keys=True,indent=4)
     return text
 
+#For knowing the availability of vaccines, we use datetime module
 t = datetime.datetime.now()
 day = t.day + 1
 month = t.month
 year = t.year
 
-count = 0
+count = 0 #count maintains the count of days (here, 20 days)
 sent = ""
 while count < 20:
     if(day > 31):
@@ -40,7 +43,7 @@ while count < 20:
             year = year + 1
     
     date = str(day) + '-' + str(month) + '-' + str(year)
-    req = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=445&date=" + date
+    req = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=445&date=" + date #api request to fetch the metadata of vaccination centres and available vaccines
     response = requests.get(req)
     st = str(jprint(response.json()))
     file  = open("data.json",'w')
