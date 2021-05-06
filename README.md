@@ -61,3 +61,21 @@ Here, it will run after every 10 mins, it can be changed accordingly. To learn m
 
 For Windows users:
 Follow these [steps](https://datatofish.com/python-script-windows-scheduler/).
+
+## Function of the driver.py file
+The extra functionality that it has over the vax_alert.py file is reading the text file containing the details of the subscribers to get the state, district id, and email id, and reading the states.json file.
+The text file contains the details of the subscribers in the following format - State : District : email1 email2 ... For example if there are 3 subscribers from North Delhi with email ids e1@abc.com, e2@abc.com and e3@abc.com, then the content of the file will be as following:
+
+    Delhi : North Delhi : e1@abc.com e2@abc.com e3@abc.com
+
+As we saw previously how to get the state details using cURL, hence, it was called prior and the response was stored in a file called states.json. Hence, calling this api isn't required at all. The state id can be assigned just by using the state entered in the text file.
+
+Then a request is sent to retrieve the district id of the subscriber using the state id and using this district id, 7 requests are sent for the coming 7 days about available slots at vaccination centres in the subscriber's district.
+
+If there are any available slots (let's say 2), the subscribers receive an email alert in the following format:
+
+    from: availvax@gmail.com
+    subject: Vaccine Available
+
+    Available at: Vaccination Centre1 on dd-mm-yyyy
+    Available at: Vaccination Centre2 on dd-mm-yyyy
