@@ -63,7 +63,7 @@ For Windows users:
 Follow these [steps](https://datatofish.com/python-script-windows-scheduler/).
 
 ## Function of the driver.py file
-The extra functionality that it has over the vax_alert.py file is reading the text file containing the details of the subscribers to get the state, district id, and email id, and reading the states.json file.
+The extra functionality that it has over the vax_alert.py file is reading the text file containing the details of the subscribers to get the state, district, and email, and reading the states.json file.
 The text file contains the details of the subscribers in the following format - State : District : email1 email2 ... For example if there are 3 subscribers from North Delhi with email ids e1@abc.com, e2@abc.com and e3@abc.com, then the content of the file will be as following:
 
     Delhi : North Delhi : e1@abc.com e2@abc.com e3@abc.com
