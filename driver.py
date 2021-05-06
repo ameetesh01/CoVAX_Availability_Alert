@@ -13,7 +13,7 @@ def email_alert(subject, body, to):
 
     user = "availvax@gmail.com"
     msg['from'] = user
-    pwd = "iuokhukohdxqbrrh"
+    pwd = "********"
 
     server = smtplib.SMTP("smtp.gmail.com",587)
     server.starttls()
