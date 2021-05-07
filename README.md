@@ -1,4 +1,4 @@
-# CoVAX_Availabilty_Alert
+# CoVAX_Availability_Alert
 This is a simple python script that can give regular vaccination availability updates through email alerts so that we do not miss out on our only hope in fighting this pandemic. This script is run as a corn job. The users can specify how regularly and at which time they want to get the updates. Before running the script, some initial setup might be required. We will be using the APIs provided by [API Setu](https://apisetu.gov.in/public/marketplace/api/cowin). 
 
 ## Initial Set-ups
